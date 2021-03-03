@@ -16,7 +16,6 @@ export const ProductCard = ({src, price, name }) => {
            {name} <br />
            {price}
           </section> 
-
           </div>
      )
 }

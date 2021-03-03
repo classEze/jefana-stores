@@ -44,4 +44,8 @@ body{
       transform: scale 1.22;
       transition-duration: 2s;
   }  
+  #cart > div {
+    @apply border-b-2 border-opacity-40
+  }
+
   

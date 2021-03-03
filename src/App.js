@@ -5,6 +5,7 @@ import  Footer  from "./Footer.js";
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import SingleProduct from './components/SingleProduct'
 import About from "./components/About.js";
+import Cart from "./components/Cart.js";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
     <Switch>
     <Route exact path="/product" component={SingleProduct} />
     <Route exact path="/about" component={About} />
+    <Route exact path="/cart" component={Cart} />
     </Switch>
     <Footer />
     </BrowserRouter>
