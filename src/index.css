@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.search-wrapper{
+  @apply w-4/6 lg:mt-40 mt-8 px-4 mx-auto my-4 text-lg text-white h-14 flex rounded-lg bg-secondary  
+}
+.icons > * {
+  @apply mr-3
+}
+#buttons > * {
+  @apply rounded-2xl mr-4 h-8 text-sm border-gray-400 px-4 border-2 border-opacity-50 border-gray-200 text-gray-700
+}
+button:click{
+  border:none;
+  outline: none 
+}
+
+aside > span#drop-icons {
+  @apply border-transparent border-opacity-40 flex justify-between items-center  border-2 rounded-2xl px-2 py-2 mb-4
+}
