@@ -16,7 +16,6 @@ export const Slider = ({imgArray}) => {
       const slidejsx = imgArray.map((image, index)=> {
                if(current===index){
                    return(
-                        <>
                     <div key={index} className="flex h-full items-center">
 
                     <FaArrowAltCircleLeft  className="text-xl cursor-pointer  text-gray-600" onClick={prev} />
@@ -28,7 +27,6 @@ export const Slider = ({imgArray}) => {
                     <FaArrowAltCircleRight className="text-xl cursor-pointer text-gray-600" onClick={next} />
 
                    </div>
-                   </>
                    ) 
                }
                else{

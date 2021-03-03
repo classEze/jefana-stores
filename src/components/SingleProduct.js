@@ -16,9 +16,9 @@ const SingleProduct = ({location, history}) => {
      const [show, setShow] = useState(false)
 
      function changeNumber(e) {
-          if(e.target.id == "Add") setNumber(number => number + 1 )
+          if(e.target.id === "Add") setNumber(number => number + 1 )
           else{
-               setNumber(number=> number == 1 ? number : number - 1)
+               setNumber(number=> number === 1 ? number : number - 1)
           }
      }
        
