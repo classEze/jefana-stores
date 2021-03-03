@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { ProductCard } from './ProductCard'
 
 export const Products = () => {
-     const [ products, setProducts ] = useState([1,2,3,4])
+     const products = [1,2,3,4]
      return (
           <div className="grid mb-10 md:grid-cols-2 gap-10 w-4/6 mx-auto mt-10">
                {
