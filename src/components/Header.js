@@ -1,6 +1,7 @@
 import React from 'react'
 import { HiMenuAlt2 } from 'react-icons/hi'
 import {GiShoppingBag} from 'react-icons/gi'
+import {Link} from 'react-router-dom'
 
 export const Header = () => {
     return(
@@ -17,7 +18,7 @@ export const Header = () => {
         </section>
 
         <section>
-          < GiShoppingBag className="text-4xl"/>
+         <Link to="/cart">< GiShoppingBag className="text-4xl"/> </Link>
         </section>
       </nav>
    )
