@@ -11,19 +11,15 @@
 #buttons > * {
   @apply rounded-2xl mr-4 h-8 text-sm border-gray-400 px-4 border-2 border-opacity-50 border-gray-200 text-gray-700
 }
-button:click{
-  border:none;
-  outline: none 
-}
 
 aside > span#drop-icons {
-  @apply border-transparent border-opacity-40 flex justify-between items-center  border-2 rounded-2xl px-2 py-2 mb-4
+  @apply border-transparent border-opacity-40 flex items-center  border-2 rounded-2xl px-2 py-2 mb-4
 }
 body{
   margin:0;
   Padding:0;
   font-family: Graphik,Boing,sans-serif;
-  background: rgb(227, 91, 103,1);
+  background: rgba(227, 91, 103,1);
   max-width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
@@ -41,11 +37,16 @@ body{
   }
   #slide-active{
       opacity:1;
-      transform: scale 1.22;
+      transform: all 2s;
       transition-duration: 2s;
   }  
   #cart > div {
     @apply border-b-2 border-opacity-40
   }
+  button:focus{
+    outline: unset;
+    border: none;
+  }
+  
 
   

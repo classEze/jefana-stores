@@ -18,13 +18,13 @@ export const Slider = ({imgArray}) => {
                    return(
                     <div key={index} className="flex h-full items-center">
 
-                    <FaArrowAltCircleLeft  className="text-xl cursor-pointer  text-gray-600" onClick={prev} />
+                    <FaArrowAltCircleLeft  className="text-3xl cursor-pointer  text-white" onClick={prev} />
 
                      <Link to={'/product?id='+index} className="h-full w-full flex items-center">
-                     <img alt="" className="mx-auto w-3/5 h-5/6 object-cover" src={image} /> 
+                     <img alt="Whatever" className="mx-auto w-3/5 h-5/6 object-contain" src={image} /> 
                      </Link>
 
-                    <FaArrowAltCircleRight className="text-xl cursor-pointer text-gray-600" onClick={next} />
+                    <FaArrowAltCircleRight className="text-3xl cursor-pointer text-white" onClick={next} />
 
                    </div>
                    ) 
