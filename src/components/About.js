@@ -11,8 +11,8 @@ const About = ({history}) => {
           if(e.target.classList.contains('drop-shadow'))
               history.push('/')
              }
-          const contact = useSelector(state=>state.dataStore.data.contact)
-          const socialMedia = useSelector(state=>state.dataStore.data.socialMedia)
+          const contact = useSelector(state=>state.dataStore.data ? state.dataStore.data.contact : {})
+          const socialMedia = useSelector(state=> state.dataStore.data ? state.dataStore.data.socialMedia : {})
  
      return (
           <div className="w-full h-full fixed top-0 z-10 bg-transparent drop-shadow" onClick={closeModal}>

@@ -7,15 +7,17 @@ import {useSelector, useDispatch} from 'react-redux'
 
 
 
-const SingleProduct = ({location, history}) => {
+const SingleProduct = ({location, history, match}) => {
+     const data = useSelector(state=>state.dataStore.data || {} )
+
     function closeModal(e) {
          if(e.target.classList.contains('drop-shadow'))
              history.push('/')
             }
-     const dataStore = useSelector(state=>state.dataStore)
-     console.log(dataStore)
 
-     const images = ["doc1.png","/doc2.png","/doc3.png","/doc4.png","/doc5.png","/doc6.png","/doc7.png","/doc8.png","/doc9.png","/spinner.gif"]
+    const SingleProduct = data.products.find(product=>product.id === match.params.id)
+    
+     // const images = result.productMedia || []
 
      const [number, setNumber] = useState(1)
 
@@ -32,8 +34,8 @@ const SingleProduct = ({location, history}) => {
      return (
           <>
           <div className="w-full h-full fixed top-0 z-10 bg-transparent drop-shadow overflow-auto" onClick={closeModal}>
-          <section className="h-5/6 w-5/6 ml-20 mt-16 bg-white grid md:grid-cols-2 ">
-                    <Slider imgArray={images}/>
+          <section className="h-5/6 w-5/6 mx-auto my-10 bg-white grid md:grid-cols-2 ">
+                    <Slider/>
                     <section className="md:mt-8 ml-12 overflow-auto mb-10">
                          onions <br />
                          By Comrule <br />

@@ -6,7 +6,7 @@ import {useSelector} from 'react-redux'
 
 
 export const Header = () => {
-  const identity = useSelector(state=>state.dataStore.data || {} )
+  const identity = useSelector(state=>state.dataStore.data || {}  )
 
     return(
       <nav 
@@ -16,9 +16,11 @@ export const Header = () => {
       </section>
 
       <section className="flex flex-col items-center">
-          <span className="font-bold"> {identity.storeName}</span>
-          <span className='text-sm'> By {identity.business.businessName}</span>
-          <span className=""> {identity.welcomeMessage.substring(0,50)}...</span>
+        <span className="font-bold text-xl"> {identity.storeName || ""}</span> 
+        <span className='text-sm'> By {identity.business? identity.business.businessName :""} </span>
+        <span className=""> {identity.welcomeMessage ? identity.welcomeMessage.substring(0,50) : ""}...</span>
+        
+         
         </section>
 
         <section>

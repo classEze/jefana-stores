@@ -28,7 +28,7 @@ function App() {
     <SearchBar />
     <Switch>
     <Route exact path="/" component={Products} />
-    <Route exact path="/product" component={SingleProduct} />
+    <Route exact path="/product/:id" component={SingleProduct} />
     <Route exact path="/about" component={About} />
     <Route exact path="/cart" component={Cart} />
     </Switch>
