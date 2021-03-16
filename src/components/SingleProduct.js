@@ -8,17 +8,16 @@ import {useSelector, useDispatch} from 'react-redux'
 
 
 const SingleProduct = ({location, history, match}) => {
-     const data = useSelector(state=>state.dataStore.data || {} )
+     const data = useSelector(state=> state.dataStore.data)
+     const products = data ? data.products : [] 
+
 
     function closeModal(e) {
          if(e.target.classList.contains('drop-shadow'))
              history.push('/')
             }
 
-    const SingleProduct = data.products.find(product=>product.id === match.params.id)
-    
-     // const images = result.productMedia || []
-
+    const singleProduct = products.find(product=>product.id == match.params.id)    
      const [number, setNumber] = useState(1)
 
      const [show, setShow] = useState(false)
@@ -27,36 +26,47 @@ const SingleProduct = ({location, history, match}) => {
      function changeNumber(e) {
           if(e.target.id === "Add") setNumber(number => number + 1 )
           else{
-               setNumber(number=> number === 1 ? number : number - 1)
+               setNumber(number=> number === 1 ? number : number - 1 )
           }
      }
        
      return (
           <>
           <div className="w-full h-full fixed top-0 z-10 bg-transparent drop-shadow overflow-auto" onClick={closeModal}>
+
           <section className="h-5/6 w-5/6 mx-auto my-10 bg-white grid md:grid-cols-2 ">
-                    <Slider/>
-                    <section className="md:mt-8 ml-12 overflow-auto mb-10">
-                         onions <br />
-                         By Comrule <br />
-                         Hello <br />
 
-                         <p className="mt-4">Size</p>
-                         <select name="size" id="" className="rounded-2xl h6 border-2 border-transparent">
-                              <option disabled selected value="">choose</option>
-                              <option disabled value="">small</option>
-                              <option disabled value="">very small</option>
-                              <option disabled value="">medium</option>
-                              <option disabled value="">big</option>
-                         </select>
+          {singleProduct && <Slider product={singleProduct} unique="unique" />
+          }
 
-                         <p className="mt-4">Colour</p>
-                         <section id="buttons" className="flex flex-wrap">
-                         <button>white</button>
-                         <button>black</button>
-                         <button>red</button>
-                         <button>green</button>
-                         </section>
+                  {
+                  data && <section className="md:mt-8 ml-12 overflow-auto mb-10">
+                         {singleProduct ? singleProduct.productName : '' } <br />
+                         By {data.storeName} <br />
+                         {singleProduct.productDescription} <br />
+                         {singleProduct.productSizes &&
+                         <>
+                          <p className="mt-4">Size</p>
+                          <select name="size" id="" className="rounded-2xl h6 border-2 border-transparent">
+                               <option disabled selected value="">choose</option>
+                               <option disabled value="">small</option>
+                               <option disabled value="">very small</option>
+                               <option disabled value="">medium</option>
+                               <option disabled value="">big</option>
+                          </select>
+                          </>
+                           }
+                          {singleProduct.productColours && 
+                          <>
+                              <p className="mt-4">Colour</p>
+                              <section id="buttons" className="flex flex-wrap">
+                              <button>white</button>
+                              <button>black</button>
+                              <button>red</button>
+                              <button>green</button>
+                              </section>
+                              </>
+                          }
                           
                          <p className="mt-4">How Many</p>
                          <div className="border-2 w-4/12 flex justify-around items-center border-transparent border-opacity-50 rounded-3xl">
@@ -66,7 +76,7 @@ const SingleProduct = ({location, history, match}) => {
                          </div>
 
                          <p className="mt-4">Price</p>
-                         <p> NGN 11 </p>
+                         <p> {data.storeCurrency} {singleProduct.productPrice} </p>
 
                       <div id="button2" className=" flex items-start mt-8 ">
                            <button className="border-none px-4 py-2 mr-4 rounded-2xl text-white bg-primary"> Add to bag</button>
@@ -86,7 +96,8 @@ const SingleProduct = ({location, history, match}) => {
                       </div>
 
                     </section>
-               </section>           
+}
+               </section>         
           </div>
           </>
      )

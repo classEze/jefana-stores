@@ -17,7 +17,7 @@ function App() {
 
   useEffect(
     () =>{
-      fetch('https://manifest-salesapi.herokuapp.com/shops/comurule-venturesss-72594')
+      fetch('https://manifest-salesapi.herokuapp.com/shops/manifest-stores-03213')
       .then(res=>res.json()).then(data=>dispatch(setStore(data))
         ).catch(err=>console.log(err))}, [] )
 

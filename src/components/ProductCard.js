@@ -6,9 +6,8 @@ export const ProductCard = ({product }) => {
 
      return (
           <div className="product-card flex h-72 flex-col rounded-xl overflow-hidden">
-
           <section className=' bg-secondary overflow-hidden flex-grow'>
-              <Slider imgArray={product.productMedia}/>
+              <Slider product={product}/>
           </section> 
 
           <section className="bg-white text-center">

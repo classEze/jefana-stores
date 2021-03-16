@@ -31,15 +31,6 @@ body{
   *{
       box-sizing: border-box;
   }
-  #slide{
-      opacity:0.1;
-      transition-duration:2s
-  }
-  #slide-active{
-      opacity:1;
-      transform: all 2s;
-      transition-duration: 2s;
-  }  
   #cart > div {
     @apply border-b-2 border-opacity-40
   }
@@ -47,6 +38,24 @@ body{
     outline: unset;
     border: none;
   }
+
+  .hide-left{
+    opacity: 0;
+    display: none;
+
+  }
+
+  .hide-right{
+    opacity: 0;
+    display: none;
+  }
+  img[alt=slider-image] {
+    transition: all 3s;
+  }
+  *[data-unique=unique]{
+  @apply bg-secondary m-8
+  }
+
   
 
   
