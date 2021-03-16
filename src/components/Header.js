@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import { HiMenuAlt2 } from 'react-icons/hi'
 import {GiShoppingBag} from 'react-icons/gi'
 import {Link} from 'react-router-dom'

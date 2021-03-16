@@ -3,7 +3,7 @@ import { Slider } from './Slider'
 import {FaCaretDown, FaHeart, FaWhatsapp} from 'react-icons/fa'
 import { AiOutlineMail } from 'react-icons/ai'
 import { FiPhoneCall } from 'react-icons/fi'
-import {useSelector, useDispatch} from 'react-redux'
+import {useSelector} from 'react-redux'
 
 
 
@@ -17,7 +17,7 @@ const SingleProduct = ({location, history, match}) => {
              history.push('/')
             }
 
-    const singleProduct = products.find(product=>product.id == match.params.id)    
+    const singleProduct = products.find(product=>product.id === match.params.id)    
      const [number, setNumber] = useState(1)
 
      const [show, setShow] = useState(false)

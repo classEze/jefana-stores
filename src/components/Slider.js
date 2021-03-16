@@ -19,8 +19,8 @@ export const Slider = ({product, unique}) => {
 
      return (
             <>
-            {product.productMedia.length == 0 && <Link data-unique={unique} to={'/product/' + product.id}>< GiShoppingBag className=" text-white mx-auto w-3/5 h-5/6"/> </Link>}
-            {product.productMedia.length == 1 && <Link data-unique={unique} to={'/product/' + product.id} className="flex h-full w-full justify-center items-center"> <img class =" w-5/6 h-5/6 object-contain" src={product.productMedia[0]} alt="Product Image"/> </Link> }
+            {product.productMedia.length === 0 && <Link data-unique={unique} to={'/product/' + product.id}>< GiShoppingBag className=" text-white mx-auto w-3/5 h-5/6"/> </Link>}
+            {product.productMedia.length === 1 && <Link data-unique={unique} to={'/product/' + product.id} className="flex h-full w-full justify-center items-center"> <img class =" w-5/6 h-5/6 object-contain" src={product.productMedia[0]} alt="Product"/> </Link> }
             
             
             { product.productMedia.length > 1 &&
@@ -30,18 +30,18 @@ export const Slider = ({product, unique}) => {
                          if(current === index) {
                           return (
                           <Link key={index} to={'/product/'+product.id} className="h-5/6 w-5/6">
-                          <img alt="slider-image" className="h-full w-full object-contain" src={image} /> 
+                          <img alt="slider" className="h-full w-full object-contain" src={image} /> 
                           </Link>
                           )}
                         else if(current > index){
                         return (<Link key={index} to={'/product/'+product.id} className="h-5/6 hide-right w-5/6">
-                          <img alt="slider-image" className="h-full w-full object-contain" src={image} /> 
+                          <img alt="slider" className="h-full w-full object-contain" src={image} /> 
                           </Link>
                           )}
                         else{
                              return (
                          <Link key={index} to={'/product/'+product.id} className=" hide-left h-5/6 w-5/6">
-                          <img alt="slider-image" className="h-full w-full object-contain" src={image} /> 
+                          <img alt="slider" className="h-full w-full object-contain" src={image} /> 
                           </Link>
                           )}
                          }
