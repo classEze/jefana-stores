@@ -3,10 +3,10 @@ import {FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import {GiShoppingBag} from 'react-icons/gi'
 
+
 export const Slider = ({product, unique}) => {
      const [current,setCurrent] = useState(0)
 
-     // product.productMedia = [ "doc1.png", "doc2.png" , "spinner.gif" ]
 
      const prev = () => {
       setCurrent( current=>  current === 0 ? product.productMedia.length - 1  : current - 1 )

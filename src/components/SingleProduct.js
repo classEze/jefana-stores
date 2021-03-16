@@ -17,7 +17,7 @@ const SingleProduct = ({location, history, match}) => {
              history.push('/')
             }
 
-    const singleProduct = products.find(product=>product.id === match.params.id)    
+    const singleProduct = products.find(product=>Number(product.id) === Number(match.params.id))    
      const [number, setNumber] = useState(1)
 
      const [show, setShow] = useState(false)
@@ -28,8 +28,7 @@ const SingleProduct = ({location, history, match}) => {
           else{
                setNumber(number=> number === 1 ? number : number - 1 )
           }
-     }
-       
+     } 
      return (
           <>
           <div className="w-full h-full fixed top-0 z-10 bg-transparent drop-shadow overflow-auto" onClick={closeModal}>
@@ -40,7 +39,8 @@ const SingleProduct = ({location, history, match}) => {
           }
 
                   {
-                  data && <section className="md:mt-8 ml-12 overflow-auto mb-10">
+                  data &&
+                   <section className="md:mt-8 ml-12 overflow-auto mb-10">
                          {singleProduct ? singleProduct.productName : '' } <br />
                          By {data.storeName} <br />
                          {singleProduct.productDescription} <br />
